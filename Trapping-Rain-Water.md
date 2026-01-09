@@ -36,6 +36,19 @@ n == height.length
 
 <h3>Main Solution:</h3>
 <p>
+  I am approaching Two Pointers concept for this problem.
+  <ul>
+    <li>First we have to check the Array is empty or not</li>
+    <li>then take two pointers left and right</li>
+    <li>after the two pointers take leftMax and rightMax so that we can easily calculate the amount of watter tripped</li>
+    <li>now take a variable for result</li>
+    <li>run a loop until left < right </li>
+    <li>write a condition the if leftMax is lessthan rightMax increase left and change leftMax to maximum of leftMax and height[left] and then add leftMax - height[left] to result</li>
+    <li>if the condition is not satisfied then decrease right and change rightMax to maximum of rightMax and height[right] and then add rightMax - height[right] to result</li>
+    <li>getout from loop and return result</li>
+  </ul>
+
+  <h4><em>This is my first Problem Explanation and I felt explanation is not good but i will increase day by day it's a promise to myself</em></h4>
 </p>
 
 <h2>Code:</h2>
@@ -46,21 +59,21 @@ n == height.length
       if(height.empty()){
         return 0;
       }
-      int l = 0;
-      int r = height.size() - 1;
+      int left = 0;
+      int right = height.size() - 1;
       int leftMax = height[l];
       int rightMax = height[r];
       int water = 0;
       while(l < r){
         if(leftMax < rightMax){
-          l++;
-          leftMax = max(leftMax, height[l]);
-          water += leftMax - height[1];
+          left++;
+          leftMax = max(leftMax, height[left]);
+          water += leftMax - height[left];
         }
         else {
-          r--;
-          rightMax = max(rightMax, height[r]);
-          water += rightMax - height[r];
+          right--;
+          rightMax = max(rightMax, height[right]);
+          water += rightMax - height[right];
         }
       }
       return water;
