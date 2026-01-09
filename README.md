@@ -6,4 +6,4 @@
 <br/>
 because my explanation skills are not yet all good.
 <br/>
-that is what the reason for creating this repo i wanna increase my explanation skills as well as english</em>
+that is what the reason for creating this repo, i wanna learn explanation as well as english consistently</em>
