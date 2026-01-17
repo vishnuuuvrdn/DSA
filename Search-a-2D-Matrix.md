@@ -31,7 +31,58 @@ Output: false
 
 
 <h1>Solution:</h1>
+<h3>Intuition:</h3>
+<p>
+  We pretend the 2D matrix is a single sorted 1D array and run binary search on it.
+</p>
+
+<h3>Algorithm:</h3>
+<p>
+  <h4>Look at the matrix.</h4>
+  <ul>
+    <li>
+      Treat it like one long straight line, not rows and columns.
+    </li>
+  </ul>
+  
+  <h4>Count everything.</h4>
+  <ul>
+    <li>
+      Total numbers = rows × columns.
+    </li>
+  </ul>
+  
+  <h4>Start the search.</h4>
+  <ul>
+    <li>Left side starts at the first number.</li>
+    <li>Right side starts at the last number.</li>
+  </ul>
+  <h4>While left has not crossed right:</h4>
+  <ul>
+    <li>Go to the middle number.</li>
+    <li>Figure out which row it is in.</li>
+    <li>Figure out which column it is in.</li>
+    <li>Check the number.</li>
+    
+  <li><h4>If the number is equal to the target:</h4></li>
+        Return true.
+  
+  <li><h4>If the number is smaller than the target:</h4></li>
+      Move to the right side.
+
+  <li><h4>If the number is bigger than the target:</h4></li>
+      Move to the left side.
+</ul>
+
+  <h4>If loop ended then:</h4>
+  <ul>
+     <li>Return false.</li>
+  </ul>
+</p>
+
+
 <h3>Code:</h3>
+
 <pre>
   <code>
     class Solution {
